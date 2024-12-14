@@ -177,6 +177,8 @@
        command: systemctl status httpd
 
 - hosts: "{{ server }}"
+  vars_files:
+    - /root/Ansible/Wizall_Prod/SN/var.yml
   tasks:
      - name: Get {{ service }} Service Status
        command: systemctl status {{ service3 }} 
