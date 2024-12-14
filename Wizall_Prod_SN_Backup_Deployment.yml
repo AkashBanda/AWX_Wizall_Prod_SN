@@ -3,8 +3,6 @@
     - /root/Ansible/Wizall_Prod/SN/var.yml
 
 - hosts: "{{ server }}"
-  vars_files:
-    - /root/Ansible/Wizall_Prod/SN/var.yml
   tasks:
     - name: Get the current date in YYYY-MM-DD format
       ansible.builtin.command: "date +%F"
@@ -157,9 +155,9 @@
 #         name: "httpd" 
 #         state: stopped
     
-#- hosts: SN-TRN
+#- hosts: "{{ server }}"
 #  tasks:
-#     - name: Restarting Management service
+#     - name: Restarting {{ service }} service
 #       service:
 #         name: "{{ service3 }}"
 #         state: "restarted"
@@ -171,15 +169,15 @@
 #         name: "httpd" 
 #         state: started
 
-#- hosts: SN-WEB
-#  tasks:
-#     - name: Get HTTPD Service Status
-#       command: systemctl status httpd
+- hosts: SN-WEB
+  tasks:
+     - name: Get HTTPD Service Status
+       command: systemctl status httpd
 
-#- hosts: SN-TRN
-#  tasks:
-#     - name: Get Management Service Status
-#       command: systemctl status SN_MFS_Mgnt.service 
+- hosts: "{{ server }}"
+  tasks:
+     - name: Get {{ service }} Service Status
+       command: systemctl status {{ service3 }} 
 
 
 - hosts: localhost
