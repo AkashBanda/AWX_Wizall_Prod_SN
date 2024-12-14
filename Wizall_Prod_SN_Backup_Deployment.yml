@@ -157,7 +157,7 @@
   tasks:
      - name: Restarting Management service
        service:
-         name: "SN_MFS_Mgnt.service"
+         name: "{{ service3 }}"
          state: "restarted"
 
 - hosts: SN-WEB
