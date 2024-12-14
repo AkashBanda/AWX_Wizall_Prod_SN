@@ -1,7 +1,7 @@
-- hosts: localhost
-  vars_files:
-    - /root/Ansible/Wizall_Prod/SN/var.yml
-
+#- hosts: localhost
+#  vars_files:
+#    - /root/Ansible/Wizall_Prod/SN/var.yml
+#
 - hosts: "{{ server }}"
   vars_files:
     - /root/Ansible/Wizall_Prod/SN/var.yml
