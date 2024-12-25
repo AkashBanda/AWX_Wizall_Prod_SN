@@ -118,7 +118,7 @@
       
     - name: Depploying {{ service }}.jar on {{ service2 }} service
       copy: 
-         src: "/root/Ansible/Wizall_Prod/MFS-WizallMW/{{ service }}/target/{{ service }}.jar"
+         src: "/root/Ansible/Wizall_Prod/SN/MFS-WizallMW/{{ service }}/target/{{ service }}.jar"
 #         dest: "/home/mfssupport.lead/Wizall/{{ service2 }}/Apps/"
          dest: "/opt/Application/SN_Wizall/MobifinApps/{{ service2 }}/Apps/"
          owner: "mobifin"
@@ -128,7 +128,7 @@
 
     - name: Depploying InternalTransactionService.jar on {{ service2 }} service
       copy: 
-         src: "/root/Ansible/Wizall_Prod/MFS-WizallMW/{{ service }}/target/InternalTransactionService.jar"
+         src: "/root/Ansible/Wizall_Prod/SN/MFS-WizallMW/{{ service }}/target/InternalTransactionService.jar"
 #         dest: "/home/mfssupport.lead/Wizall/{{ service2 }}/Apps/"
          dest: "/opt/Application/SN_Wizall/MobifinApps/{{ service2 }}/Apps/"
          owner: "mobifin"
@@ -138,7 +138,7 @@
 
     - name: Deploying {{ service }} dependencies on {{ service2 }} Service
       copy:
-         src: "/root/Ansible/Wizall_Prod/MFS-WizallMW/{{ service }}/target/dependency-jars/"
+         src: "/root/Ansible/Wizall_Prod/SN/MFS-WizallMW/{{ service }}/target/dependency-jars/"
 #         dest: "/home/mfssupport.lead/Wizall/{{ service2 }}/dependencies/"
          dest: "/opt/Application/SN_Wizall/MobifinApps/{{ service2 }}/dependencies/"
          owner: "mobifin"
